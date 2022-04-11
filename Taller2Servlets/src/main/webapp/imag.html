@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Subir Imagenes</title>
+        <script type="text/javascript">
+        	const button = document.querySelector('.btn')
+        	const form   = document.querySelector('.form')
+
+        	button.addEventListener('click', function() {
+           	form.classList.add('form--no') 
+        	});
+
+        	function filePreview(input) {
+        	    if (input.files && input.files[0]) {
+        	        var reader = new FileReader();
+        	        reader.onload = function (e) {
+        	            $('#uploadForm + img').remove();
+        	            $('#uploadForm').after('<img src="'+e.target.result+'" width="450" height="300"/>');
+        	        }
+        	        reader.readAsDataURL(input.files[0]);
+        	    }
+        	}
+
+
+        	
+        </script>
+        <style>
+        body {
+            background: linear-gradient(45deg, #FFFFFF 10%, #F7FC56 90%);
+        }
+			#Lista form {
+            float:left
+        }
+                #Lista {
+            background: linear-gradient(45deg, #F8FF10 10%, #FFB710 90%);
+            position: absolute;
+            width: 100%;
+        }
+        #Lista a {
+            float:left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            
+        }
+			
+        </style>
+        
+        <div id="Lista">
+
+        <a href="/Taller2Servlets-1.0-SNAPSHOT/home.jsp">Home</a>
+        <a href="/Taller2Servlets-1.0-SNAPSHOT">|Logout|</a>
+        	<img src="http://assets.stickpng.com/images/585e4beacb11b227491c3399.png" width="30" height="30"/>
+        	
+            
+        </form>
+
+    </div>
+    </head>
+    <body>
+    <br>
+    <br>
+    <br>
+	<form method="post" action="upload" enctype="multipart/form-data" id="uploadForm">
+    	<input type="file" name="file" id="file" />
+    	<input type="submit" name="submit" value="Upload"/>
+	</form>
+    </body>
+    <footer>
+    <br>
+    <br>
+    <br>
+ 
+    <hr>
+    <br>
+    <center>
+        <a href="mailto:ehernandezlo@unbosque.edu.co">Esteban Hernandez Londoño</a>
+    </center>
+    <br>
+    <br>
+    <p>Copyright 2022</p>
+</footer>
+</html>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Taller2Servlets:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Taller2Servlets</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Taller2Servlets-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Taller2Servlets:war exploded" />
+    </root>
+  </artifact>
+</component>
